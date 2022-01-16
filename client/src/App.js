@@ -45,11 +45,12 @@ function App() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   
-
+  const [gangName, setGangName] = useState("");
+  const [gangSymbol, setGangSymbol] = useState("");
 
   const { correctNetwork, switchToCorrectNetwork, connected, provider } = useWallet();
   
-  const [gangFactory, isReady] = useContract("0x7e1D33FcF1C6b6fd301e0B7305dD40E543CF7135",GangFactoryABI); // Goerli
+  const [gangFactory, isReady] = useContract("0x591d5E9119da45beCc869b64C520204FB2afC1e7", GangFactoryABI); // Goerli
 
 
   const retrieveFile = (e) => {
@@ -106,6 +107,19 @@ function App() {
     setDescription(e.target.value);
   };
 
+  function handleGangNameChange(e) {
+    setGangName(e.target.value);
+  };
+
+  function handleGangSymbolChange(e) {
+    setGangSymbol(e.target.value)
+  };
+
+  const createGang = async (e) => {
+    e.preventDefault();
+    gangFactory.createGang(gangName, gangSymbol);
+  }
+
 
   return (
     <Container>
@@ -151,7 +165,15 @@ function App() {
           upload metadata
         </Button>
       </form>
-
+    
+    
+      <form className="form" onSubmit={createGang}>
+        <label>gang name:<Input type="text"  name="name" onChange={handleGangNameChange} /></label>
+        <label>gang symbol:<Input type="text" name="description" onChange={handleGangSymbolChange} /></label>
+        <Button type="submit" className="btn">
+          create gang!
+        </Button>
+      </form>
     </Container>
   );
 }
