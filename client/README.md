@@ -3,13 +3,16 @@
 ### quick todo list for the frontend
 
 - providers + networks [x]
-- connect contracts, be able to call functions
-- query if address has gang-nfts/member-nfts.
-- display those (fancy graph will come later)
-- form for metadata, upload for file
+- connect contracts, be able to call functions [x]
+- query if address has gang-nfts/member-nfts. [x]
+- display those (fancy graph will come later) 
+- form for metadata, upload for file <------
 - add to ipfs, call contract with result.
 - text explainers + visuals 
 
+potential ui frameworks:
+https://github.com/arturbien/React95
+https://sombreroenpuntas.github.io/retro-ui/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
