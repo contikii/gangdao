@@ -6,8 +6,8 @@
 - connect contracts, be able to call functions [x]
 - query if address has gang-nfts/member-nfts. [x]
 - display those (fancy graph will come later) 
-- form for metadata, upload for file <------
-- add to ipfs, call contract with result.
+- form for metadata, upload for file <------ [x]
+- add to ipfs, call contract with result. [x]
 - text explainers + visuals 
 
 potential ui frameworks:
