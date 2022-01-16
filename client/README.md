@@ -1,5 +1,17 @@
 # Getting Started with Create React App
 
+### quick todo list for the frontend
+
+- providers + networks [x]
+- connect contracts, be able to call functions
+- query if address has gang-nfts/member-nfts.
+- display those (fancy graph will come later)
+- form for metadata, upload for file
+- add to ipfs, call contract with result.
+- text explainers + visuals 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
