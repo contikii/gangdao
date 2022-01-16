@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { NETWORKS, Provider } from '@web3-ui/core'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider network={NETWORKS.goerli}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
