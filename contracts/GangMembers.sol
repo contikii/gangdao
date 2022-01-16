@@ -13,16 +13,15 @@ contract GangMembers is Initializable, ERC721Upgradeable, ERC721URIStorageUpgrad
     using Counters for Counters.Counter;
     Counters.Counter private _memberIdCounter;
 
-    address public gangFactory;
-    uint8 constant maxMembers = 12;
+    uint8 constant maxMembers = 12;    
     
-    mapping(uint => address) idToMember;
+    
+    mapping(uint => address) public idToMember;
+
 
     function initialize(string calldata name, string calldata symbol) initializer public {
       __ERC721_init_unchained(name, symbol);
       __ERC721URIStorage_init(); // not sure if 100% necessar
-
-      // maybe mint everything in here or too much gas? 
     }
 
     function mint(address to) public returns (uint) {
@@ -49,18 +48,12 @@ contract GangMembers is Initializable, ERC721Upgradeable, ERC721URIStorageUpgrad
 
     function _burn(uint256 tokenId) internal override(ERC721Upgradeable, ERC721URIStorageUpgradeable)
     {
-        _burn(tokenId);
+        super._burn(tokenId);
     }
 
     function tokenURI(uint256 tokenId) public view override(ERC721Upgradeable, ERC721URIStorageUpgradeable)
         returns (string memory)
     {
-        return tokenURI(tokenId);
+        return super.tokenURI(tokenId);
     }
- 
 }
-
-/*
-TODO 
-    - add tokenURI setting
-*/

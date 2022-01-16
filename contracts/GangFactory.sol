@@ -9,12 +9,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-
 import "./GangMembers.sol";
-import "./Gang.sol";
-
-// TODO import gnosis safe Interface and use it to call getOwners on contract
-// TODO another ERC165 validation check in place? 
 
 contract GangFactory is ERC721, ERC721URIStorage, ERC721Enumerable {
     using Counters for Counters.Counter;
@@ -24,11 +19,11 @@ contract GangFactory is ERC721, ERC721URIStorage, ERC721Enumerable {
     Counters.Counter private _gangIdCounter;
 
 
-    mapping(uint => address) tokenToMultisig;
-    mapping(uint => bool) pfpChanged;
+    mapping(uint => address) public tokenToMultisig;
+    mapping(uint => bool) public pfpChanged;
 
-    mapping(address => address[]) multisigToMembers; 
-    mapping(uint => address) tokenToMembers; 
+    mapping(address => address[]) public multisigToMembers; 
+    mapping(uint => address) public tokenToMembers; 
 
 
 
