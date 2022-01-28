@@ -13,3 +13,11 @@ quigg plan setup:
 
 nfthack 2022 let's get going :))
 
+that hack was interesting, but let's keep going a little. Total dev time of a week at least?
+
+todo:s
+- [ ] migrate back to web3-react from web3-ui
+- [ ] nft storage working
+- [ ] display existing artefacts
+
+
